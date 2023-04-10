@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Code Editor</title>
+</head>
+<body>
+    <h1>Code Editor</h1>
+    <textarea id="code" style="width: 100%; height: 200px;"></textarea><br><br>
+    <button onclick="displayCode()">Display Code</button><br><br>
+    <iframe id="preview" style="width: 100%; height: 200px;"></iframe>
+
+    <script>
+        function displayCode() {
+            var code = document.getElementById("code").value;
+            var preview = document.getElementById("preview");
+
+            preview.contentWindow.document.open();
+            preview.contentWindow.document.write(code);
+            preview.contentWindow.document.close();
+        }
+    </script>
+</body>
+</html>
